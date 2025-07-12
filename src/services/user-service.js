@@ -41,7 +41,7 @@ class UserService {
 
     checkPassword(userInputPlainPassword, encryptedPassword) {
         try {
-            
+            return bcrypt.compareSync(userInputPlainPassword, encryptedPassword)
         } catch (error) {
             console.log('Something went wrong in password comparison');
             throw error
